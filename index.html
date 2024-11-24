@@ -33,7 +33,7 @@
         <!-- Botão de Cadastro -->
         <section id="contact">
             <h2>Cadastre-se para um orçamento</h2>
-            <form action="send_email.php" method="POST">
+            <form id="contactForm">
                 <input type="text" name="name" placeholder="Seu Nome" required>
                 <input type="email" name="email" placeholder="Seu E-mail" required>
                 <input type="tel" name="phone" placeholder="Seu Telefone" required>
@@ -46,12 +46,59 @@
                 <textarea name="message" placeholder="Detalhes adicionais"></textarea>
                 <button type="submit">Enviar</button>
             </form>
-        </section>
+            <p id="responseMessage" style="display: none;"></p>
+        </section>      
     </main>
 
     <footer>
         <p>&copy; 2024 TCCxpert. Todos os direitos reservados.</p>
     </footer>
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', async function (event) {
+        event.preventDefault(); // Evita o recarregamento da página
+
+        const form = event.target;
+        const formData = new FormData(form);
+
+        // Converte os dados do formulário para um objeto JSON
+        const jsonData = {};
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+
+        // URL do Formspree (substitua <SEU-ENDPOINT> pelo seu endpoint)
+        const endpoint = "https://formspree.io/f/xwpknord";
+
+        try {
+            const response = await fetch(endpoint, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(jsonData)
+            });
+
+            const result = await response.json();
+
+            // Exibe uma mensagem de sucesso ou erro
+            const responseMessage = document.getElementById('responseMessage');
+            if (response.ok) {
+                responseMessage.style.color = "green";
+                responseMessage.textContent = "Orçamento enviado com sucesso!";
+                responseMessage.style.display = "block";
+                form.reset(); // Limpa o formulário
+            } else {
+                responseMessage.style.color = "red";
+                responseMessage.textContent = "Erro ao enviar o orçamento. Tente novamente.";
+                responseMessage.style.display = "block";
+            }
+        } catch (error) {
+            console.error("Erro ao enviar o formulário:", error);
+            alert("Ocorreu um erro. Por favor, tente novamente.");
+        }
+    });
+</script>
+
 </body>
 </html>
 
