@@ -15,3 +15,7 @@ git commit -m "Primeiro commit"
 git config --global user.name Lucam-py
 git config --global user.email eng.lucasmatos@gmail.com
 git config --global --list
+git add .
+git commit -m "Primeiro commit"
+git push -u origin main
+git branch
