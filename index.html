@@ -19,6 +19,15 @@
             padding: 20px;
             background-color: #007BFF;
             color: white;
+            position: relative;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
 
         header h1 {
@@ -138,20 +147,20 @@
         }
 
         /* Responsividade */
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 14px; /* Ajuste o tamanho do texto */
-    }
-    #services {
-        display: flex;
-        flex-direction: column; /* Empilhe os serviços verticalmente */
-    }
-}
-
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 14px; /* Ajuste o tamanho do texto */
+            }
+            #services {
+                display: flex;
+                flex-direction: column; /* Empilhe os serviços verticalmente */
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://via.placeholder.com/150x50.png?text=TCCxpert" alt="Logo TCCxpert">
         <h1>Bem-vindo ao TCCxpert</h1>
         <p>Consultoria e Soluções Acadêmicas para seu sucesso!</p>
     </header>
@@ -161,25 +170,28 @@
         <section id="services">
             <h2>Nossos Serviços</h2>
             <div class="service">
-                <img src="https://source.unsplash.com/300x200/?education" alt="Serviço TCC">
+                <img src="https://via.placeholder.com/300x200.png?text=TCC" alt="Serviço TCC">
                 <h3>Orientação de TCC</h3>
                 <p>Especialistas para guiar seu trabalho do início ao fim.</p>
             </div>
             <div class="service">
-                <img src="https://source.unsplash.com/300x200/?article" alt="Revisão Artigos">
+                <img src="https://via.placeholder.com/300x200.png?text=Artigo" alt="Revisão Artigos">
                 <h3>Revisão de Artigos</h3>
                 <p>Melhore a qualidade e formatação do seu paper.</p>
             </div>
             <div class="service">
-                <img src="https://source.unsplash.com/300x200/?consultation" alt="Consultoria Acadêmica">
+                <img src="https://via.placeholder.com/300x200.png?text=Consultoria" alt="Consultoria Acadêmica">
                 <h3>Consultoria Acadêmica</h3>
                 <p>Soluções práticas e rápidas para dúvidas complexas.</p>
             </div>
         </section>
 
         <!-- Botão do WhatsApp -->
-        <a href="https://api.whatsapp.com/send?phone=+5571992582476&text=Sou%20Lucas%20Matos,%20como%20posso%20te%20ajudar%20a%20concluir%20seu%20Trabalho%20de%20Conclusão%20de%20Curso%20/%20Artigo%20/%20Projeto%20/%20Relatório%20/%20Dissertação%20/%20Tese?"
+        <a href="https://api.whatsapp.com/send?phone=+5571992582476&text=Sou%20Lucas%20Matos.%20Como%20posso%20te%20ajudar%20com%20TCC,%20Artigo,%20Projeto,%20Relatório,%20Dissertação%20ou%20Tese?"
            class="whatsapp-button" target="_blank">Fale conosco no WhatsApp</a>
+
+        <!-- Botão de Pagamento -->
+        <a href="https://www.mercadopago.com.br/" class="whatsapp-button" target="_blank">Pagamento</a>
 
         <!-- Formulário de Contato -->
         <section id="contact">
@@ -206,6 +218,7 @@
     </footer>
 </body>
 </html>
-git add index.html style.css
+
+
 
 
