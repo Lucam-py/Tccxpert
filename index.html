@@ -138,16 +138,16 @@
         }
 
         /* Responsividade */
-        @media (max-width: 768px) {
-            #services {
-                flex-direction: column;
-                align-items: center;
-            }
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; /* Ajuste o tamanho do texto */
+    }
+    #services {
+        display: flex;
+        flex-direction: column; /* Empilhe os serviços verticalmente */
+    }
+}
 
-            .service {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
