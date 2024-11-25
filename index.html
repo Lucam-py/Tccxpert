@@ -5,6 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCCxpert - Soluções Acadêmicas</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        /* Serviços */
+        #services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .service {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .service img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .service h3 {
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
+
+        .service p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        /* Contato */
+        #contact form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #contact input, #contact select, #contact textarea, #contact button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        #contact button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #contact button:hover {
+            background-color: #0056b3;
+        }
+
+        #responseMessage {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Botão do WhatsApp */
+        .whatsapp-button {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #25D366;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1EBE58;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,20 +161,27 @@
         <section id="services">
             <h2>Nossos Serviços</h2>
             <div class="service">
+                <img src="https://source.unsplash.com/300x200/?education" alt="Serviço TCC">
                 <h3>Orientação de TCC</h3>
                 <p>Especialistas para guiar seu trabalho do início ao fim.</p>
             </div>
             <div class="service">
+                <img src="https://source.unsplash.com/300x200/?article" alt="Revisão Artigos">
                 <h3>Revisão de Artigos</h3>
                 <p>Melhore a qualidade e formatação do seu paper.</p>
             </div>
             <div class="service">
+                <img src="https://source.unsplash.com/300x200/?consultation" alt="Consultoria Acadêmica">
                 <h3>Consultoria Acadêmica</h3>
                 <p>Soluções práticas e rápidas para dúvidas complexas.</p>
             </div>
         </section>
 
-        <!-- Botão de Cadastro -->
+        <!-- Botão do WhatsApp -->
+        <a href="https://api.whatsapp.com/send?phone=+5571992582476&text=Sou%20Lucas%20Matos,%20como%20posso%20te%20ajudar%20a%20concluir%20seu%20Trabalho%20de%20Conclusão%20de%20Curso%20/%20Artigo%20/%20Projeto%20/%20Relatório%20/%20Dissertação%20/%20Tese?"
+           class="whatsapp-button" target="_blank">Fale conosco no WhatsApp</a>
+
+        <!-- Formulário de Contato -->
         <section id="contact">
             <h2>Cadastre-se para um orçamento</h2>
             <form id="contactForm">
@@ -53,53 +204,8 @@
     <footer>
         <p>&copy; 2024 TCCxpert. Todos os direitos reservados.</p>
     </footer>
-    <script>
-    document.getElementById('contactForm').addEventListener('submit', async function (event) {
-        event.preventDefault(); // Evita o recarregamento da página
-
-        const form = event.target;
-        const formData = new FormData(form);
-
-        // Converte os dados do formulário para um objeto JSON
-        const jsonData = {};
-        formData.forEach((value, key) => {
-            jsonData[key] = value;
-        });
-
-        // URL do Formspree (substitua <SEU-ENDPOINT> pelo seu endpoint)
-        const endpoint = "https://formspree.io/f/xwpknord";
-
-        try {
-            const response = await fetch(endpoint, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(jsonData)
-            });
-
-            const result = await response.json();
-
-            // Exibe uma mensagem de sucesso ou erro
-            const responseMessage = document.getElementById('responseMessage');
-            if (response.ok) {
-                responseMessage.style.color = "green";
-                responseMessage.textContent = "Orçamento enviado com sucesso!";
-                responseMessage.style.display = "block";
-                form.reset(); // Limpa o formulário
-            } else {
-                responseMessage.style.color = "red";
-                responseMessage.textContent = "Erro ao enviar o orçamento. Tente novamente.";
-                responseMessage.style.display = "block";
-            }
-        } catch (error) {
-            console.error("Erro ao enviar o formulário:", error);
-            alert("Ocorreu um erro. Por favor, tente novamente.");
-        }
-    });
-</script>
-
 </body>
 </html>
+git add index.html style.css
 
 
