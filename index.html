@@ -25,18 +25,17 @@
         header img {
             width: 150px;
             height: auto;
-            position: absolute;
-            top: 20px;
-            left: 20px;
+            margin-bottom: 10px;
         }
 
         header h1 {
             font-size: 2.5em;
-            margin: 0;
+            margin: 10px 0 5px;
         }
 
         header p {
             font-size: 1.2em;
+            margin: 0;
         }
 
         main {
@@ -65,6 +64,7 @@
             max-width: 300px;
             text-align: center;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
 
         .service img {
@@ -83,40 +83,18 @@
             margin: 10px 0;
         }
 
-        /* Contato */
-        #contact form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        #contact input, #contact select, #contact textarea, #contact button {
+        .service a {
             display: block;
-            width: 100%;
-            margin: 10px 0;
-            padding: 10px;
-            font-size: 1em;
-        }
-
-        #contact button {
+            margin-top: 10px;
             background-color: #007BFF;
             color: white;
-            border: none;
-            cursor: pointer;
+            text-decoration: none;
+            padding: 10px;
             border-radius: 5px;
         }
 
-        #contact button:hover {
+        .service a:hover {
             background-color: #0056b3;
-        }
-
-        #responseMessage {
-            text-align: center;
-            font-size: 1.2em;
-            margin-top: 10px;
         }
 
         /* Botão do WhatsApp */
@@ -136,6 +114,10 @@
 
         .whatsapp-button:hover {
             background-color: #1EBE58;
+        }
+
+        #contact form input[type="file"] {
+            border: none;
         }
 
         /* Rodapé */
@@ -170,28 +152,28 @@
         <section id="services">
             <h2>Nossos Serviços</h2>
             <div class="service">
-                <img src="https://via.placeholder.com/300x200.png?text=TCC" alt="Serviço TCC">
+                <img src="https://via.placeholder.com/300x200.png?text=Orientação+de+TCC" alt="Orientação de TCC">
                 <h3>Orientação de TCC</h3>
                 <p>Especialistas para guiar seu trabalho do início ao fim.</p>
+                <a href="https://www.mercadopago.com.br/">R$60/hora - Agendar</a>
             </div>
             <div class="service">
-                <img src="https://via.placeholder.com/300x200.png?text=Artigo" alt="Revisão Artigos">
+                <img src="https://via.placeholder.com/300x200.png?text=Revisão+de+Artigos" alt="Revisão de Artigos">
                 <h3>Revisão de Artigos</h3>
                 <p>Melhore a qualidade e formatação do seu paper.</p>
+                <a href="https://www.mercadopago.com.br/">R$50/lauda - Comprar</a>
             </div>
             <div class="service">
-                <img src="https://via.placeholder.com/300x200.png?text=Consultoria" alt="Consultoria Acadêmica">
+                <img src="https://via.placeholder.com/300x200.png?text=Consultoria+Acadêmica" alt="Consultoria Acadêmica">
                 <h3>Consultoria Acadêmica</h3>
                 <p>Soluções práticas e rápidas para dúvidas complexas.</p>
+                <a href="https://www.mercadopago.com.br/">R$60/hora - Agendar</a>
             </div>
         </section>
 
         <!-- Botão do WhatsApp -->
-        <a href="https://api.whatsapp.com/send?phone=+5571992582476&text=Sou%20Lucas%20Matos.%20Como%20posso%20te%20ajudar%20com%20TCC,%20Artigo,%20Projeto,%20Relatório,%20Dissertação%20ou%20Tese?"
+        <a href="https://api.whatsapp.com/send?phone=+5571992582476&text=Agende%20uma%20consulta%20grátis%20online.%20Como%20posso%20te%20ajudar?"
            class="whatsapp-button" target="_blank">Fale conosco no WhatsApp</a>
-
-        <!-- Botão de Pagamento -->
-        <a href="https://www.mercadopago.com.br/" class="whatsapp-button" target="_blank">Pagamento</a>
 
         <!-- Formulário de Contato -->
         <section id="contact">
@@ -207,6 +189,7 @@
                     <option value="consultoria">Consultoria Acadêmica</option>
                 </select>
                 <textarea name="message" placeholder="Detalhes adicionais"></textarea>
+                <input type="file" name="file" accept=".doc,.docx,.pdf">
                 <button type="submit">Enviar</button>
             </form>
             <p id="responseMessage" style="display: none;"></p>
@@ -218,7 +201,3 @@
     </footer>
 </body>
 </html>
-
-
-
-
