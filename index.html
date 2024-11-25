@@ -17,10 +17,7 @@
         header {
             text-align: center;
             padding: 40px 20px;
-            background-image: url('https://i.imgur.com/xO5QdBS.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            background-color: #007BFF;
             color: white;
             position: relative;
         }
@@ -67,7 +64,6 @@
             max-width: 300px;
             text-align: center;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-            position: relative;
         }
 
         .service img {
@@ -100,27 +96,70 @@
             background-color: #0056b3;
         }
 
-        /* Botão do WhatsApp */
+        /* Botão do WhatsApp Flutuante */
         .whatsapp-button {
-            display: block;
-            text-align: center;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
             background-color: #25D366;
-            text-decoration: none;
-            border-radius: 5px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: auto;
         }
 
         .whatsapp-button:hover {
             background-color: #1EBE58;
         }
 
+        /* Formulário de Contato */
+        #contact form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        #contact input, #contact select, #contact textarea, #contact button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #contact button:hover {
+            background-color: #0056b3;
+        }
+
         #contact form input[type="file"] {
             border: none;
+        }
+
+        #responseMessage {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 10px;
         }
 
         /* Rodapé */
@@ -134,11 +173,11 @@
         /* Responsividade */
         @media screen and (max-width: 768px) {
             body {
-                font-size: 14px; /* Ajuste o tamanho do texto */
+                font-size: 14px;
             }
             #services {
                 display: flex;
-                flex-direction: column; /* Empilhe os serviços verticalmente */
+                flex-direction: column;
             }
         }
     </style>
@@ -174,10 +213,6 @@
             </div>
         </section>
 
-        <!-- Botão do WhatsApp -->
-        <a href="https://api.whatsapp.com/send?phone=+5571992582476&text=Agende%20uma%20consulta%20grátis%20online.%20Como%20posso%20te%20ajudar?"
-           class="whatsapp-button" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="20"> Fale conosco no WhatsApp</a>
-
         <!-- Formulário de Contato -->
         <section id="contact">
             <h2>Cadastre-se para um orçamento</h2>
@@ -199,8 +234,15 @@
         </section>      
     </main>
 
+    <!-- Botão do WhatsApp Flutuante -->
+    <a href="https://api.whatsapp.com/send?phone=+5571992582476&text=Agende%20uma%20consulta%20grátis%20online.%20Como%20posso%20te%20ajudar?"
+       class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
     <footer>
         <p>&copy; 2024 TCCxpert. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
+
