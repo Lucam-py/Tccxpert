@@ -50,10 +50,10 @@
 
         /* Serviços */
         #services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            justify-content: center;
         }
 
         .service {
@@ -61,7 +61,6 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
-            max-width: 300px;
             text-align: center;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         }
@@ -170,14 +169,20 @@
             color: white;
         }
 
-        /* Responsividade */
+        /* Responsividade para telas maiores */
+        @media screen and (min-width: 1024px) {
+            #services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Responsividade para telas menores */
         @media screen and (max-width: 768px) {
             body {
                 font-size: 14px;
             }
             #services {
-                display: flex;
-                flex-direction: column;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
         }
     </style>
@@ -211,6 +216,24 @@
                 <p>Soluções práticas e rápidas para dúvidas complexas.</p>
                 <a href="https://mpago.la/2pLL698">R$60/hora - Agendar</a>
             </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200.png?text=Relatório+de+Estágio" alt="Relatório de Estágio">
+                <h3>Relatório de Estágio Supervisionado</h3>
+                <p>Documentação completa com qualidade acadêmica.</p>
+                <a href="https://mpago.la/xxxxxx">R$50/lauda - Comprar</a>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200.png?text=Anteprojeto" alt="Anteprojeto de Mestrado">
+                <h3>Anteprojeto de Mestrado/Doutorado</h3>
+                <p>Desenvolva sua proposta de pesquisa com excelência.</p>
+                <a href="https://mpago.la/yyyyyy">R$70/lauda - Comprar</a>
+            </div>
+            <div class="service">
+                <img src="https://via.placeholder.com/300x200.png?text=Mentoria" alt="Mentoria Acadêmica">
+                <h3>Mentoria</h3>
+                <p>Apoio acadêmico personalizado para suas necessidades.</p>
+                <a href="https://mpago.la/zzzzzz">R$80/hora - Agendar</a>
+            </div>
         </section>
 
         <!-- Formulário de Contato -->
@@ -225,6 +248,9 @@
                     <option value="tcc">Orientação de TCC</option>
                     <option value="revisao">Revisão de Artigos</option>
                     <option value="consultoria">Consultoria Acadêmica</option>
+                    <option value="relatorio">Relatório de Estágio</option>
+                    <option value="anteprojeto">Anteprojeto de Mestrado/Doutorado</option>
+                    <option value="mentoria">Mentoria</option>
                 </select>
                 <textarea name="message" placeholder="Detalhes adicionais"></textarea>
                 <input type="file" name="file" accept=".doc,.docx,.pdf">
@@ -245,4 +271,3 @@
     </footer>
 </body>
 </html>
-
